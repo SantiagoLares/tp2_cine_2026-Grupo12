@@ -1,6 +1,96 @@
-/* las fotos de las películas están más pequeñas por un tema de visibilidad
-modifiquen los atributos a su gusto con una clase, o eliminen esta parte del código */
-img {
-  width: 100px;
-  height: 100px;
+/* =============================================
+   poster.css - Cards de películas (index)
+   Grid + Flexbox
+   ============================================= */
+
+.cartelera {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.pelicula-card {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--sombra);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.pelicula-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primario);
+}
+
+/* Proporción 2:3 para todos los posters */
+.pelicula-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.pelicula-card h3 {
+  font-size: 1rem;
+  color: var(--color-texto);
+  margin: 12px 16px 4px;
+}
+
+.pelicula-card p {
+  color: var(--color-texto-suave);
+  font-size: 0.85rem;
+  margin: 0 16px 8px;
+}
+
+.card-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 16px 16px;
+  margin-top: auto;
+}
+
+.card-acciones a:not(.btn-comprar) {
+  color: var(--color-secundario);
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.card-acciones a:not(.btn-comprar):hover {
+  color: var(--color-primario);
+}
+
+.btn-comprar {
+  display: block;
+  background-color: var(--color-primario);
+  color: var(--color-texto) !important;
+  padding: 8px 16px;
+  border-radius: var(--radio);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none !important;
+  transition: background-color 0.2s;
+}
+
+.btn-comprar:hover {
+  background-color: var(--color-primario-hover);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 900px) {
+  .cartelera {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .cartelera {
+    grid-template-columns: 1fr;
+  }
 }

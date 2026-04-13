@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cine Aurora 📽️</title>
-    <meta name="description" content="Cine Aurora - Tu destino para disfrutar del mejor cine en la ciudad. Descubre las últimas películas, compra tus entradas y vive la experiencia cinematográfica al máximo." />
+    <meta name="description" content="Cine Aurora - Tu destino para disfrutar del mejor cine en la ciudad." />
     <link rel="icon" href="./assets/favicon/logo-cine.png" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
     <header>
-      <div>
+      <div class="header-logo">
         <h1>Cine Aurora</h1>
         <img src="./assets/favicon/logo-cine.png" alt="logo-cine-aurora" />
       </div>
@@ -28,96 +28,74 @@
       <section>
         <h2>Películas en cartelera</h2>
 
-        <div>
-          <div>
-            <img src="./assets/img/poster-1.png" alt="" />
-            <h3>Nombre película</h3>
-            <p>Género</p>
-            <a href="./pages/detalle.html">Ver más</a>
-            <a
-            href="#"
-            onclick="
-              alert('Lo sentimos, en este momento no funciona nuestro sistema')
-            "
-            >Comprar entradas</a
-          >
+        <div class="cartelera">
+
+          <div class="pelicula-card">
+            <img src="./assets/img/cartelera1.webp" alt="Póster de El Padrino" />
+            <h3>El Padrino</h3>
+            <p>Drama / Crimen</p>
+            <div class="card-acciones">
+              <a href="./pages/detalle.html">Ver más</a>
+              <a href="#" class="btn-comprar" onclick="alert('Lo sentimos, en este momento no funciona nuestro sistema')">Comprar entradas</a>
+            </div>
           </div>
 
-          <div>
-            <img src="./assets/img/poster-1.png" alt="" />
-            <h3>Nombre película</h3>
-            <p>Género</p>
-            <a href="./pages/detalle.html">Ver más</a>
-            <a
-            href="#"
-            onclick="
-              alert('Lo sentimos, en este momento no funciona nuestro sistema')
-            "
-            >Comprar entradas</a
-          >
-          </div>ref="pages/pelicula.html">Ver más</a>
-
-          <div>
-            <img src="./assets/img/poster-1.png" alt="" />
-            <h3>Nombre película</h3>
-            <p>Género</p>
-            <a href="./pages/detalle.html">Ver más</a>
-            <a
-            href="#"
-            onclick="
-              alert('Lo sentimos, en este momento no funciona nuestro sistema')
-            "
-            >Comprar entradas</a
-          >
+          <div class="pelicula-card">
+            <img src="./assets/img/cartelera2.webp" alt="Póster de Pulp Fiction" />
+            <h3>Pulp Fiction</h3>
+            <p>Crimen / Thriller</p>
+            <div class="card-acciones">
+              <a href="./pages/detalle.html">Ver más</a>
+              <a href="#" class="btn-comprar" onclick="alert('Lo sentimos, en este momento no funciona nuestro sistema')">Comprar entradas</a>
+            </div>
           </div>
 
-          <div>
-            <img src="./assets/img/poster-1.png" alt="" />
-            <h3>Nombre película</h3>
-            <p>Género</p>
-            <a href="./pages/detalle.html">Ver más</a>
-            <a
-            href="#"
-            onclick="
-              alert('Lo sentimos, en este momento no funciona nuestro sistema')
-            "
-            >Comprar entradas</a
-          >
+          <div class="pelicula-card">
+            <img src="./assets/img/cartelera3.webp" alt="Póster de Forrest Gump" />
+            <h3>Forrest Gump</h3>
+            <p>Drama / Romance</p>
+            <div class="card-acciones">
+              <a href="./pages/detalle.html">Ver más</a>
+              <a href="#" class="btn-comprar" onclick="alert('Lo sentimos, en este momento no funciona nuestro sistema')">Comprar entradas</a>
+            </div>
           </div>
 
-          <div>
-            <img src="./assets/img/poster-1.png" alt="" />
-            <h3>Nombre película</h3>
-            <p>Género</p>
-            <a href="./pages/detalle.html">Ver más</a>
-            <a
-            href="#"
-            onclick="
-              alert('Lo sentimos, en este momento no funciona nuestro sistema')
-            "
-            >Comprar entradas</a
-          >
+          <div class="pelicula-card">
+            <img src="./assets/img/cartelera4.webp" alt="Póster de Titanic" />
+            <h3>Titanic</h3>
+            <p>Drama / Romance</p>
+            <div class="card-acciones">
+              <a href="./pages/detalle.html">Ver más</a>
+              <a href="#" class="btn-comprar" onclick="alert('Lo sentimos, en este momento no funciona nuestro sistema')">Comprar entradas</a>
+            </div>
           </div>
 
-          <div>
-            <img src="./assets/img/poster-1.png" alt="" />
-            <h3>Nombre película</h3>
-            <p>Género</p>
-            <a href="./pages/detalle.html">Ver más</a>
-            <a
-            href="#"
-            onclick="
-              alert('Lo sentimos, en este momento no funciona nuestro sistema')
-            "
-            >Comprar entradas</a
-          >
+          <div class="pelicula-card">
+            <img src="./assets/img/cartelera5.webp" alt="Póster de Matrix" />
+            <h3>Matrix</h3>
+            <p>Ciencia ficción / Acción</p>
+            <div class="card-acciones">
+              <a href="./pages/detalle.html">Ver más</a>
+              <a href="#" class="btn-comprar" onclick="alert('Lo sentimos, en este momento no funciona nuestro sistema')">Comprar entradas</a>
+            </div>
           </div>
+
+          <div class="pelicula-card">
+            <img src="./assets/img/cartelera6.webp" alt="Póster de El Rey León" />
+            <h3>El Rey León</h3>
+            <p>Animación / Drama</p>
+            <div class="card-acciones">
+              <a href="./pages/detalle.html">Ver más</a>
+              <a href="#" class="btn-comprar" onclick="alert('Lo sentimos, en este momento no funciona nuestro sistema')">Comprar entradas</a>
+            </div>
+          </div>
+
         </div>
       </section>
     </main>
 
     <footer>
-      <p> &copy; 2026 Cine Aurora - Todos los derechos reservados</p>
+      <p>&copy; 2026 Cine Aurora - Todos los derechos reservados</p>
     </footer>
   </body>
 </html>

@@ -1,33 +1,214 @@
-@import url(./components/poster.css); /* solo tiene modificado las dimensiones de las img */
+/* =============================================
+   CINE AURORA - style.css
+   TP N°2 - Programación III - UTN 2026
+   Modularización con @import
+   ============================================= */
 
-/* Paletas de colores que pueden usar: */
+@import url(./components/poster.css);
+@import url(./components/detalle.css);
+@import url(./components/estrenos.css);
 
-/* Paleta 1: */
-/*:root {
-  --color-fondo: #0f172a;
-  --color-superficie: #1e293b;
-  --color-primario: #e11d48;
-  --color-secundario: #f59e0b;
-  --color-texto: #f8fafc;
-  --color-texto-suave: #94a3b8;
-}*/
-
-/* Paleta 2: */
-/*:root {
-  --color-fondo: #fff8e7;
-  --color-superficie: #ffe8a3;
-  --color-primario: #e63946;
-  --color-secundario: #ffb703;
-  --color-texto: #1d3557;
-  --color-texto-suave: #457b9d;
-}*/
-
-/* Paleta 3: */
-/*:root {
+/* --- Variables (Paleta 3) --- */
+:root {
   --color-fondo: #141414;
   --color-superficie: #1f1f1f;
   --color-primario: #e50914;
   --color-secundario: #00b4d8;
   --color-texto: #ffffff;
   --color-texto-suave: #b3b3b3;
-}*/
+  --color-borde: #333333;
+  --color-primario-hover: #f40d1a;
+  --radio: 8px;
+  --sombra: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* --- Reset general --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--color-secundario);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primario);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-texto);
+}
+
+main {
+  flex: 1;
+  padding: 32px 40px;
+}
+
+/* =============================================
+   HEADER - Flexbox
+   ============================================= */
+header {
+  background-color: var(--color-superficie);
+  border-bottom: 3px solid var(--color-primario);
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--sombra);
+}
+
+header > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header > div:first-child img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+header > div:first-child h1 {
+  font-size: 1.8rem;
+  color: var(--color-primario);
+  letter-spacing: 2px;
+}
+
+/* =============================================
+   NAV - Flexbox
+   ============================================= */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  color: var(--color-texto);
+  font-size: 0.95rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 6px 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--color-primario);
+  border-bottom: 2px solid var(--color-primario);
+}
+
+/* =============================================
+   FOOTER - Flexbox
+   ============================================= */
+footer {
+  background-color: var(--color-superficie);
+  border-top: 2px solid var(--color-borde);
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}
+
+footer p {
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+}
+
+/* =============================================
+   SECCIÓN GENERAL
+   ============================================= */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section > h2 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-primario);
+}
+
+/* =============================================
+   BOTÓN COMPRAR ENTRADAS
+   ============================================= */
+a[onclick] {
+  display: inline-block;
+  background-color: var(--color-primario);
+  color: var(--color-texto) !important;
+  padding: 10px 20px;
+  border-radius: var(--radio);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none !important;
+  margin-top: 8px;
+}
+
+a[onclick]:hover {
+  background-color: var(--color-primario-hover);
+}
+
+/* =============================================
+   MEDIA QUERIES
+   ============================================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 20px;
+  }
+
+  nav {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main {
+    padding: 20px 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  header > div:first-child h1 {
+    font-size: 1.3rem;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  section > h2 {
+    font-size: 1.2rem;
+  }
+}
