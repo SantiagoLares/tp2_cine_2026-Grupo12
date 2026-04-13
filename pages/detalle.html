@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <div>
+      <div class="header-logo">
         <h1>Cine Aurora</h1>
         <img src="../assets/favicon/logo-cine.png" alt="logo-cine-aurora" />
       </div>
@@ -24,59 +24,67 @@
     </header>
 
     <main>
-      <section>
-        <div>
-          <img src="../assets/img/poster-1.png" alt="Póster" />
+      <section class="detalle-seccion">
+
+        <!-- Poster -->
+        <div class="detalle-poster">
+          <img src="../assets/img/poster-1.png" alt="Póster de la película" />
         </div>
-        <div>
-          <div>
+
+        <!-- Info -->
+        <div class="detalle-info">
+
+          <div class="detalle-titulo">
             <h1>Título</h1>
             <h2>Lorem ipsum, dolor sit.</h2>
           </div>
-          <div>
+
+          <div class="detalle-sinopsis">
             <h3>Sinopsis</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
               ullam ipsum corporis quidem, assumenda magni officia recusandae.
               Tenetur voluptatem architecto, dolores eius, deleniti quam
-              voluptatibus laboriosam ut recusandae animi quisquam!
-            </p>
-          </div>
-          <div>
-            <h3>Duración</h3>
-            <p>155 minutos</p>
+              voluptatibus laboriosam ut recusandae animi quisquam!</p>
           </div>
 
-          <div>
-            <h3>Género</h3>
-            <p>Ciencia ficción</p>
+          <div class="detalle-meta">
+            <div class="meta-item">
+              <h3>Duración</h3>
+              <p>155 minutos</p>
+            </div>
+            <div class="meta-item">
+              <h3>Género</h3>
+              <p>Ciencia ficción</p>
+            </div>
+            <div class="meta-item">
+              <h3>Director</h3>
+              <p>John Doe</p>
+            </div>
+            <div class="meta-item">
+              <h3>Clasificación</h3>
+              <p>+13</p>
+            </div>
           </div>
 
-          <div>
-            <h3>Director</h3>
-            <p>John Doe</p>
+          <div class="detalle-horarios">
+            <h3>Horarios</h3>
+            <div class="horarios-lista">
+              <span>16:00</span>
+              <span>19:00</span>
+              <span>22:00</span>
+            </div>
           </div>
 
-          <div>
-            <h3>Clasificación</h3>
-            <p>+13</p>
+          <div class="detalle-puntuacion">
+            <p>Puntuación: <span class="estrellas">★★★★☆</span></p>
           </div>
-          <div>
-            <h3>Horarios:</h3>
-            <p>16:00</p>
-            <p>19:00</p>
-            <p>22:00</p>
-          </div>
-          <div>
-            <p>Puntuación: ★★★★☆</p>
-          </div>
+
           <a
             href="#"
-            onclick="
-              alert('Lo sentimos, en este momento no funciona nuestro sistema')
-            "
-            >Comprar entradas</a
-          >
+            class="btn-comprar"
+            onclick="alert('Lo sentimos, en este momento no funciona nuestro sistema')"
+          >Comprar entradas</a>
+
         </div>
       </section>
     </main>
