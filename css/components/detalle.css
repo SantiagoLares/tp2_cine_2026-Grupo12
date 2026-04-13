@@ -1,92 +1,205 @@
 /* =============================================
-   detalle.css - Página detalle de película
-   Grid + Flexbox
+   detalle.css - Detalle de película
+   Flexbox + Media Queries (obligatorio TP2)
    ============================================= */
 
-/* Layout principal: poster a la izquierda, info a la derecha */
-main > section > div:first-child {
-  display: grid;
-  grid-template-columns: 320px 1fr;
+/* Layout principal: flexbox row */
+.detalle-seccion {
+  display: flex;
+  flex-direction: row;
   gap: 40px;
-  align-items: start;
+  align-items: flex-start;
   max-width: 1100px;
   margin: 0 auto;
+  padding: 32px 20px;
 }
 
 /* Poster */
-main > section > div:first-child > div:first-child img {
+.detalle-poster {
+  flex: 0 0 300px;
+}
+
+.detalle-poster img {
   width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
   border-radius: var(--radio);
   box-shadow: var(--sombra);
   border: 2px solid var(--color-borde);
 }
 
-/* Panel de info: flex columna */
-main > section > div:first-child > div:last-child {
+/* Panel info: flexbox columna */
+.detalle-info {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* Título + subtítulo */
-main > section > div:first-child > div:last-child > div:first-child h1 {
+/* Título */
+.detalle-titulo h1 {
   font-size: 2rem;
   color: var(--color-texto);
   margin-bottom: 4px;
 }
 
-main > section > div:first-child > div:last-child > div:first-child h2 {
+.detalle-titulo h2 {
   font-size: 1rem;
   color: var(--color-texto-suave);
   font-weight: normal;
 }
 
-/* Bloques de info (sinopsis, duración, etc.) */
-main > section > div:first-child > div:last-child > div {
+/* Sinopsis */
+.detalle-sinopsis {
   background-color: var(--color-superficie);
   border: 1px solid var(--color-borde);
   border-radius: var(--radio);
-  padding: 14px 18px;
+  padding: 16px;
 }
 
-main > section > div:first-child > div:last-child > div h3 {
-  font-size: 0.85rem;
+.detalle-sinopsis h3 {
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--color-primario);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-main > section > div:first-child > div:last-child > div p {
+.detalle-sinopsis p {
+  color: var(--color-texto);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Meta: grid de 2 columnas */
+.detalle-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.meta-item {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 12px 16px;
+}
+
+.meta-item h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-primario);
+  margin-bottom: 4px;
+}
+
+.meta-item p {
   color: var(--color-texto);
   font-size: 0.95rem;
 }
 
-/* Horarios: flex row */
-main > section > div:first-child > div:last-child > div:nth-child(7) {
+/* Horarios: flexbox row */
+.detalle-horarios {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 12px 16px;
+}
+
+.detalle-horarios h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-primario);
+  margin-bottom: 8px;
+}
+
+.horarios-lista {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.horarios-lista span {
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 6px 16px;
+  color: var(--color-texto);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.horarios-lista span:hover {
+  border-color: var(--color-primario);
+  color: var(--color-primario);
 }
 
 /* Puntuación */
-main > section > div:first-child > div:last-child > div:nth-child(8) p {
-  font-size: 1.2rem;
-  color: var(--color-secundario);
+.detalle-puntuacion p {
+  font-size: 1rem;
+  color: var(--color-texto-suave);
 }
 
-/* Media queries detalle */
+.estrellas {
+  color: var(--color-secundario);
+  font-size: 1.3rem;
+}
+
+/* Botón comprar */
+.btn-comprar {
+  display: block;
+  background-color: var(--color-primario);
+  color: var(--color-texto) !important;
+  padding: 12px 24px;
+  border-radius: var(--radio);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none !important;
+  transition: background-color 0.2s, transform 0.1s;
+  margin-top: 8px;
+}
+
+.btn-comprar:hover {
+  background-color: var(--color-primario-hover);
+  transform: scale(1.02);
+}
+
+/* =============================================
+   MEDIA QUERIES
+   ============================================= */
+
+/* Tablet */
 @media (max-width: 768px) {
-  main > section > div:first-child {
-    grid-template-columns: 1fr;
+  .detalle-seccion {
+    flex-direction: column;
+    padding: 20px 16px;
+    gap: 24px;
   }
 
-  main > section > div:first-child > div:first-child img {
+  .detalle-poster {
+    flex: none;
+    width: 100%;
     max-width: 280px;
     margin: 0 auto;
   }
 
-  main > section > div:first-child > div:last-child > div:first-child h1 {
+  .detalle-titulo h1 {
     font-size: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .detalle-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .horarios-lista {
+    flex-wrap: wrap;
+  }
+
+  .detalle-titulo h1 {
+    font-size: 1.3rem;
   }
 }
