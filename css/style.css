@@ -7,8 +7,9 @@
 @import url(./components/poster.css);
 @import url(./components/detalle.css);
 @import url(./components/estrenos.css);
+@import url(./components/login.css);
+@import url(./components/registro.css);
 @import url(./components/perfil.css);
-
 /* --- Variables (Paleta 3) --- */
 :root {
   --color-fondo: #141414;

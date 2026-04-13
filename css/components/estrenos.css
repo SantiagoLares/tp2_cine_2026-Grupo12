@@ -1,73 +1,60 @@
 /* =============================================
-   estrenos.css - Página próximos estrenos
+   estrenos.css - Próximos estrenos
    Grid + Flexbox
    ============================================= */
 
-/* Título de la sección estrenos */
-main > section > div:first-child > div:first-child h1 {
-  font-size: 1.8rem;
-  margin-bottom: 28px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--color-primario);
-  color: var(--color-texto);
-}
-
-/* Grid de estrenos */
-main > section > div:first-child {
+.estrenos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  margin-top: 16px;
 }
 
-/* Card de estreno */
-main > section > div {
+.estreno-card {
   background-color: var(--color-superficie);
   border: 1px solid var(--color-borde);
   border-radius: var(--radio);
-  padding: 16px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   box-shadow: var(--sombra);
   transition: transform 0.2s, border-color 0.2s;
 }
 
-main > section > div:hover {
+.estreno-card:hover {
   transform: translateY(-4px);
   border-color: var(--color-secundario);
 }
 
-main > section > div img {
+.estreno-card img {
   width: 100%;
-  height: 280px;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
-  border-radius: var(--radio);
+  object-position: center top;
 }
 
-main > section > div h4 {
+.estreno-card h4 {
   font-size: 1rem;
   color: var(--color-texto);
+  margin: 12px 16px 4px;
 }
 
-main > section > div p {
+.estreno-card p {
   font-size: 0.85rem;
   color: var(--color-secundario);
   font-weight: bold;
+  margin: 0 16px 16px;
 }
 
-/* Media queries estrenos */
+/* MEDIA QUERIES */
 @media (max-width: 900px) {
-  main > section > div:first-child {
+  .estrenos-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  main > section > div:first-child {
+  .estrenos-grid {
     grid-template-columns: 1fr;
-  }
-
-  main > section > div img {
-    height: 220px;
   }
 }
