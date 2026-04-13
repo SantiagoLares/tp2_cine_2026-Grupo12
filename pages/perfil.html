@@ -11,7 +11,7 @@
 
   <body>
     <header>
-      <div>
+      <div class="header-logo">
         <h1>Cine Aurora</h1>
         <img src="../assets/favicon/logo-cine.png" alt="logo-cine-aurora" />
       </div>
@@ -24,37 +24,86 @@
       </div>
     </header>
 
-    <main>
-      <h1>Panel de usuario</h1>
-      <section>
-        <div>
-          <img
-            src="../assets/img/perfil-placeholder.png"
-            alt="Foto de perfil"
-          />
-          <h2>Hola, John Doe 👋📽️!</h2>
-        </div>
-        <div class="perfil-info">
-          <p>Nombre completo: John Doe</p>
-          <p>Email: usuario@example.com</p>
-          <p>Fecha de nacimiento: dd/mm/yyyy</p>
-          <p>Contraseña: ********</p>
-          <p>Miembro desde: 2026</p>
-        </div>
-      </section>
-      <section>
-        <div>
-          <div  class="perfil-peliculas">
-            <h3>Películas ya vistas</h3>
+    <main class="perfil-main">
+
+      <h2 class="perfil-titulo">Panel de usuario</h2>
+
+      <!-- Layout principal: foto+datos | películas vistas -->
+      <div class="perfil-grid">
+
+        <!-- Columna izquierda: foto y datos -->
+        <aside class="perfil-aside">
+          <div class="perfil-foto">
+            <img src="../assets/img/perfil-placeholder.png" alt="Foto de perfil" />
+            <h3>Hola, John Doe 👋</h3>
           </div>
-          <div class="peliculas-vistas">
-            <ul>
-              <li>🎬 Estreno A - Vista el 10/03</li>
-              <li>🎬 Estreno B - Vista el 15/03</li>
-            </ul>
+
+          <div class="perfil-datos">
+            <div class="dato-item">
+              <span class="dato-label">Nombre</span>
+              <span class="dato-valor">John Doe</span>
+            </div>
+            <div class="dato-item">
+              <span class="dato-label">Email</span>
+              <span class="dato-valor">usuario@example.com</span>
+            </div>
+            <div class="dato-item">
+              <span class="dato-label">Nacimiento</span>
+              <span class="dato-valor">dd/mm/yyyy</span>
+            </div>
+            <div class="dato-item">
+              <span class="dato-label">Contraseña</span>
+              <span class="dato-valor">••••••••</span>
+            </div>
+            <div class="dato-item">
+              <span class="dato-label">Miembro desde</span>
+              <span class="dato-valor">2026</span>
+            </div>
           </div>
-        </div>
-      </section>
+        </aside>
+
+        <!-- Columna derecha: películas vistas -->
+        <section class="perfil-vistas">
+          <h3 class="vistas-titulo">Películas ya vistas</h3>
+
+          <div class="vistas-grid">
+
+            <div class="vista-card">
+              <img src="../assets/img/cartelera1.webp" alt="El Padrino" />
+              <div class="vista-info">
+                <h4>El Padrino</h4>
+                <p>Vista el 10/03/2026</p>
+              </div>
+            </div>
+
+            <div class="vista-card">
+              <img src="../assets/img/cartelera2.webp" alt="Pulp Fiction" />
+              <div class="vista-info">
+                <h4>Pulp Fiction</h4>
+                <p>Vista el 15/03/2026</p>
+              </div>
+            </div>
+
+            <div class="vista-card">
+              <img src="../assets/img/cartelera3.webp" alt="Forrest Gump" />
+              <div class="vista-info">
+                <h4>Forrest Gump</h4>
+                <p>Vista el 20/03/2026</p>
+              </div>
+            </div>
+
+            <div class="vista-card">
+              <img src="../assets/img/cartelera4.webp" alt="Titanic" />
+              <div class="vista-info">
+                <h4>Titanic</h4>
+                <p>Vista el 25/03/2026</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
     </main>
 
     <footer>
